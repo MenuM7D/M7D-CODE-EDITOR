@@ -81,8 +81,6 @@
             padding: 20px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            width: 100%; /* تصغير العرض بحيث لا يتجاوز حجم الشاشة */
-            box-sizing: border-box; /* تأكد من احتساب الحواف ضمن الحجم */
         }
 
         h1 {
@@ -119,33 +117,13 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 90%; /* تحديد العرض ليكون 90% من العرض الكلي */
+            width: 80%;
             max-width: 600px;
             background: rgba(0, 0, 0, 0.8);
             padding: 20px;
             border-radius: 10px;
             color: white;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-        }
-
-        .popup-content {
-            overflow-y: auto; /* يسمح بالتمرير إذا كان المحتوى كبير */
-        }
-
-        /* تغيير المحرر ليصبح مرن */
-        .CodeMirror {
-            width: 100%; /* تأكد من أن المحرر يتسع بالكامل داخل الحاوية */
-            height: 400px; /* تحديد ارتفاع ثابت للمحرر */
-            overflow-x: auto; /* يمكن السحب أفقيًا فقط عندما يتجاوز النص */
-        }
-
-        /* عرض أزرار التحكم بشكل مناسب على الهواتف */
-        @media screen and (max-width: 768px) {
-            .control-button, .special-button {
-                font-size: 1em;
-                width: 100%;
-                margin: 10px 0; /* تكبير الهوامش لتناسب الشاشات الصغيرة */
-            }
         }
     </style>
 </body>
