@@ -15,53 +15,91 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow-x: hidden; /* منع التمرير الأفقي */
+    font-size: 16px;
 }
 
 h1 {
     margin-bottom: 20px;
-    font-size: 24px; /* حجم مناسب للعناوين */
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* إضافة تباعد بين الحروف لزيادة التميز */
+    text-align: center;
 }
 
 #languageSelect {
     margin-bottom: 20px;
     font-size: 16px;
     width: 100%;
-    max-width: 600px; /* تحديد أقصى عرض للعنصر */
-    padding: 10px;
+    max-width: 600px;
+    padding: 12px;
     box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease; /* تأثير التحول */
+}
+
+#languageSelect:focus {
+    border-color: #4CAF50; /* تغيير لون الحدود عند التفاعل */
+    outline: none;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5); /* إضافة تأثير الظل عند التركيز */
 }
 
 #codeEditor {
     width: 100%;
-    max-width: 900px; /* تحديد أقصى عرض للمحرر */
-    height: 400px; /* زيادة ارتفاع المحرر */
+    max-width: 900px;
+    height: 400px;
     font-family: monospace;
     font-size: 16px;
-    padding: 10px;
+    padding: 12px;
     border: 2px solid #333;
-    border-radius: 5px;
+    border-radius: 8px;
     box-sizing: border-box;
     min-height: 200px;
     resize: vertical;
     margin-bottom: 20px;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+#codeEditor:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+    outline: none;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     margin: 10px 0;
     font-size: 16px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
     background-color: #333;
     color: #fff;
     border: none;
     width: 100%;
-    max-width: 600px; /* تحديد أقصى عرض للزر */
+    max-width: 600px;
     box-sizing: border-box;
+    transition: all 0.3s ease; /* إضافة تأثير التحول على الأزرار */
 }
 
 button:hover {
     background-color: #444;
+    transform: scale(1.05); /* تكبير الزر قليلاً عند التمرير عليه */
+}
+
+button:active {
+    background-color: #555;
+    transform: scale(0.98); /* تقليص الزر قليلاً عند الضغط عليه */
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.7); /* إضافة تأثير الظل عند التركيز على الزر */
 }
 
 @media (max-width: 768px) {
@@ -70,7 +108,7 @@ button:hover {
     }
 
     #codeEditor {
-        height: 250px; /* تقليل ارتفاع المحرر في الأجهزة الصغيرة */
+        height: 250px;
     }
 
     button {
@@ -78,7 +116,7 @@ button:hover {
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 22px;
     }
 
     #languageSelect {
@@ -88,7 +126,7 @@ button:hover {
 
 @media (max-width: 480px) {
     #codeEditor {
-        height: 200px; /* تقليل ارتفاع المحرر بشكل أكبر للهواتف الصغيرة */
+        height: 200px;
     }
 
     button {
@@ -96,7 +134,7 @@ button:hover {
     }
 
     h1 {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     #languageSelect {
