@@ -72,6 +72,14 @@ h1 {
     outline: none;
 }
 
+.button-container {
+    display: flex;
+    flex-wrap: wrap; /* السماح بتوزيع الأزرار في عدة صفوف على الشاشات الصغيرة */
+    justify-content: center;
+    width: 100%;
+    gap: 15px; /* إضافة تباعد بين الأزرار */
+}
+
 button {
     padding: 12px 24px;
     margin: 10px 0;
@@ -82,7 +90,7 @@ button {
     color: #fff;
     border: none;
     width: 100%;
-    max-width: 600px;
+    max-width: 300px;
     box-sizing: border-box;
     transition: all 0.3s ease; /* إضافة تأثير التحول على الأزرار */
 }
@@ -111,16 +119,22 @@ button:focus {
         height: 250px;
     }
 
-    button {
-        width: 100%;
-    }
-
     h1 {
         font-size: 22px;
     }
 
     #languageSelect {
         font-size: 14px;
+    }
+
+    .button-container {
+        flex-direction: column; /* ترتيب الأزرار عموديًا على الشاشات الصغيرة */
+        align-items: center; /* محاذاة الأزرار في المنتصف */
+    }
+
+    button {
+        width: 100%;
+        max-width: 100%; /* التأكد من أن الأزرار تأخذ العرض الكامل */
     }
 }
 
