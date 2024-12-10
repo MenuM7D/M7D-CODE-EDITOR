@@ -9,31 +9,32 @@ body {
     padding: 20px;
     background-color: #f4f4f4;
     direction: rtl;
-    text-align: right; /* ضبط المحاذاة لتكون أفضل للكتابة باللغة العربية */
+    text-align: right;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    overflow-x: hidden; /* منع التمرير الأفقي */
 }
 
 h1 {
     margin-bottom: 20px;
-    font-size: 24px; /* زيادة حجم العنوان لجعله أكثر وضوحًا */
+    font-size: 24px; /* حجم مناسب للعناوين */
 }
 
 #languageSelect {
     margin-bottom: 20px;
     font-size: 16px;
     width: 100%;
-    max-width: 600px; /* تحديد أقصى عرض ليكون متناسبًا مع شاشة المستخدم */
+    max-width: 600px; /* تحديد أقصى عرض للعنصر */
     padding: 10px;
     box-sizing: border-box;
 }
 
 #codeEditor {
     width: 100%;
-    max-width: 900px; /* تحديد أقصى عرض ليكون مناسبًا لتصفّح الأكواد */
-    height: 400px; /* زيادة ارتفاع المحرر لتوفير مساحة أكبر للكتابة */
+    max-width: 900px; /* تحديد أقصى عرض للمحرر */
+    height: 400px; /* زيادة ارتفاع المحرر */
     font-family: monospace;
     font-size: 16px;
     padding: 10px;
@@ -41,7 +42,7 @@ h1 {
     border-radius: 5px;
     box-sizing: border-box;
     min-height: 200px;
-    resize: vertical; /* السماح بتغيير حجم المحرر عموديًا */
+    resize: vertical;
     margin-bottom: 20px;
 }
 
@@ -55,7 +56,7 @@ button {
     color: #fff;
     border: none;
     width: 100%;
-    max-width: 600px; /* تحديد أقصى عرض لزر العمل ليكون مناسبًا */
+    max-width: 600px; /* تحديد أقصى عرض للزر */
     box-sizing: border-box;
 }
 
@@ -82,5 +83,23 @@ button:hover {
 
     #languageSelect {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    #codeEditor {
+        height: 200px; /* تقليل ارتفاع المحرر بشكل أكبر للهواتف الصغيرة */
+    }
+
+    button {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    #languageSelect {
+        font-size: 12px;
     }
 }
