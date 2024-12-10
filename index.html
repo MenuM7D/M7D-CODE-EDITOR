@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/theme/material-darker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/addon/hint/show-hint.min.css">
+    <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#007bff">
 </head>
 <body>
     <div class="container">
@@ -46,6 +48,15 @@
     <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
 
     <script src="main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(() => console.log('Service Worker مسجل بنجاح'))
+            .catch(err => console.error('فشل التسجيل:', err));
+    });
+        }
+            <script>
 
     <style>
         body {
