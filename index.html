@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7D CODE EDITOR</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/theme/material-darker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/addon/hint/show-hint.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="editorTitle">محرر أكواد جافا سكربت</h1>
+
+        <textarea id="codeEditor" class="code-editor"></textarea>
+
+        <button id="clearButton" class="control-button">حذف محتويات محرر الاكواد</button>
+        <button id="autoCompleteButton" class="control-button">إكمال تلقائي</button>
+        <button id="copyButton" class="control-button">نسخ الكود</button>
+        <button id="pasteButton" class="control-button">لصق كود</button>
+
+        <!-- زر التشفير -->
+        <button id="encryptButton" class="control-button">تشفير الكود</button>
+
+        <button id="privacyButton" class="control-button special-button">سياسة الخصوصية</button>
+    </div>
+
+    <!-- نافذة منبثقة -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span id="closePopup" class="close">&times;</span>
+            <h2>مرحبا بك👋🏻</h2>
+            <p>انت الان في محرر اكواد جافا سكربت الامثل والافضل والاسلس لتحرير اكواد الجافا اسكربت الخاصه بك بسلاسه وخصوصيه يمكنك هنا تحرير اكواد جافا سكربت بسهوله مع بعض المساعدات المقدمه من الموقع مثل الاكمال التلقائي وايضا يمكنك بعد الانتهاء من تحرير كودك اذا كان مهما بلنسبه لك يمكنك تشفيره من هنا ونسخه الي الحافظه ووضعه في مشروعك ككود مشفر للحفاظ عليه من السرقه جميع اكوادك لا يمكن لأي احد ان يطلع عليها حتي مالك الموقع ولا يراها غيرك خصوصيتك محمية هنا بلكامل</p>
+            <a href="https://taplink.cc/m7d.bot" target="_blank" class="platform-link">يمكنك زيارة منصات مطور الموقع عبر الضغط هنا</a>
+        </div>
+    </div>
+
+    <!-- مكتبات CodeMirror -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.9/addon/hint/javascript-hint.min.js"></script>
+
+    <!-- مكتبة التشفير -->
+    <script src="https://cdn.jsdelivr.net/npm/javascript-obfuscator/dist/index.browser.js"></script>
+
+    <script src="main.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+            background: url('https://i.ibb.co/s1QysVR/copilot-image-1733759539577.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #33cc33;
+        }
+
+        .control-button, .special-button {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+            margin: 5px;
+        }
+
+        .special-button {
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            font-size: 1.3em;
+        }
+
+        .control-button:hover, .special-button:hover {
+            background-color: #d32f2f;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</body>
+</html>
