@@ -67,6 +67,7 @@ h1 {
     transition: all 0.3s ease;
     white-space: nowrap; /* يمنع السطر من التفاف النص */
     overflow-x: auto; /* التمرير الأفقي بناءً على طول السطر */
+    overflow-y: hidden; /* يمنع التمرير العمودي للتأثير على باقي الصفحة */
 }
 
 #codeEditor:focus {
@@ -184,4 +185,4 @@ button:focus {
     #languageSelect {
         font-size: 12px;
     }
-}
+            }
