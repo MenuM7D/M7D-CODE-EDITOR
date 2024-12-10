@@ -1,0 +1,21 @@
+{
+  "name": "Code EDITOR",
+  "short_name": "C&E",
+  "description": "محرر اكواد مثالي وسلس",
+  "start_url": "https://alphaproject-self.vercel.app/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon2.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
