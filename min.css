@@ -16,6 +16,7 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     font-size: 16px;
+    position: relative; /* إضافة هذه الخاصية لضمان وضع النوافذ المنبثقة في المكان المناسب */
 }
 
 h1 {
@@ -68,6 +69,7 @@ h1 {
     white-space: nowrap; /* يمنع السطر من التفاف النص */
     overflow-x: auto; /* التمرير الأفقي بناءً على طول السطر */
     overflow-y: hidden; /* يمنع التمرير العمودي للتأثير على باقي الصفحة */
+    max-height: 600px; /* تحديد أقصى ارتفاع للمحرر */
 }
 
 #codeEditor:focus {
@@ -141,6 +143,22 @@ button:focus {
     box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
 }
 
+/* تعديل النوافذ المنبثقة */
+.popup {
+    position: fixed; /* ضمان بقاء النوافذ المنبثقة في نفس المكان عند التمرير */
+    top: 50%; /* وضع النافذة في المنتصف عموديًا */
+    left: 50%; /* وضع النافذة في المنتصف أفقيًا */
+    transform: translate(-50%, -50%); /* محاذاة النافذة بشكل دقيق في المنتصف */
+    z-index: 9999; /* التأكد من أن النافذة في المقدمة */
+    background-color: rgba(0, 0, 0, 0.8); /* خلفية شفافة للنوافذ المنبثقة */
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 80%; /* تحديد أقصى عرض للنوافذ المنبثقة */
+    min-width: 300px;
+}
+
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -185,4 +203,4 @@ button:focus {
     #languageSelect {
         font-size: 12px;
     }
-            }
+        }
