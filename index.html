@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -53,54 +53,20 @@
     <script src="main.js"></script>
 
     <script>
-    // تسجيل الـ Service Worker
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(registration => {
-                    console.log('تم تسجيل الـ Service Worker بنجاح:', registration);
-                })
-                .catch(error => {
-                    console.log('فشل تسجيل الـ Service Worker:', error);
-                });
-        });
-    }
-
-    // عرض إعلانات Pop-up كل 4 دقائق
-    function showPopUpAd() {
-        document.getElementById('container-2d5d3d0ca28d974225a0b4e4794fbb9d').innerHTML = '';
-
-        const popUpScript = document.createElement('script');
-        popUpScript.src = "//pl25242919.profitablecpmrate.com/2d5d3d0ca28d974225a0b4e4794fbb9d/invoke.js";
-        popUpScript.async = true;
-        popUpScript.dataset.cfasync = "false";
-        document.body.appendChild(popUpScript);
-
-        console.log("إعلان Pop-up ظهر!");
-    }
-
-    // عرض إعلانات Social Bar كل 5 دقائق
-    function showSocialBarAd() {
-        const socialBarScripts = [
-            "//pl25242903.profitablecpmrate.com/3f/63/51/3f6351754bf6effa078bf0452022aa68.js",
-            "//pl25243009.profitablecpmrate.com/e3/87/71/e387717756717389b1393d7002c527dd.js"
-        ];
-
-        socialBarScripts.forEach(src => {
-            const script = document.createElement('script');
-            script.src = src;
-            script.type = "text/javascript";
-            document.body.appendChild(script);
-        });
-
-        console.log("إعلان Social Bar ظهر!");
-    }
-
-    // مؤقتات زمنية لتكرار الإعلانات
-    setInterval(showPopUpAd, 2 * 60 * 1000);  // كل 4 دقائق
-    setInterval(showSocialBarAd, 2 * 60 * 1000);  // كل 5 دقائق
+        // تسجيل الـ service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(registration => {
+                        console.log('تم تسجيل الـ Service Worker بنجاح:', registration);
+                    })
+                    .catch(error => {
+                        console.log('فشل تسجيل الـ Service Worker:', error);
+                    });
+            });
+        }
     </script>
- 
+    
     <style>
         body {
             margin: 0;
@@ -162,6 +128,8 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
     </style>
+    <script type='text/javascript' src='//pl25242903.profitablecpmrate.com/3f/63/51/3f6351754bf6effa078bf0452022aa68.js'></script>
+    <script type='text/javascript' src='//pl25243009.profitablecpmrate.com/e3/87/71/e387717756717389b1393d7002c527dd.js'></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1827728408286540"
      crossorigin="anonymous"></script>
 </body>
